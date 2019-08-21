@@ -11,6 +11,12 @@ public interface UserMapper {
     List<User> userList();
 
     /*
+    * 回显
+    *
+    * */
+    User echoUser(Integer user_id);
+
+    /*
     *删除用户
     * */
     int deleteUser(Integer user_id);

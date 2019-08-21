@@ -46,6 +46,15 @@ public class Test {
         }
     }
     /*
+    * 回显
+    * */
+    @org.junit.Test
+    public void echoUser(){
+        //5.使用代理对象执行方法
+        User user = userMapper.echoUser(203);
+        System.out.println(user);
+    }
+    /*
     * 测试删除
     * */
     @org.junit.Test
