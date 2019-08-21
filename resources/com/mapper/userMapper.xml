@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.UserMapper">
+    <!--用户列表-->
+    <select id="userList" resultType="com.entity.User">
+        select * from sys_user
+    </select>
+    <!--删除-->
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from sys_user where user_id=#{user_id}
+    </delete>
+    <!--修改-->
+    <update id="updateUser" parameterType="com.entity.User">
+        update sys_user set name=#{name},age=#{age},sex=#{sex},hobby=#{hobby},login_name=#{login_name},password=#{password},create_time=#{create_time}
+        where user_id=#{user_id}
+    </update>
+    <!--添加-->
+    <insert id="insertUser" parameterType="com.entity.User">
+        insert into sys_user
+            (name,age,sex,hobby,login_name,password,create_time)
+            values (#{name},#{age},#{sex},#{hobby},#{login_name},#{password},#{create_time})
+    </insert>
+
+</mapper>
